@@ -311,9 +311,9 @@ void gamma_correction(BMPFile *image, double gamma)
     {
         for (int j = 0; j < width; j++)
         {
-            uint8_t r = (uint8_t)(pow(image->pixels[i][j].red / 255.0, inv_gamma) * 255.0);
-            uint8_t g = (uint8_t)(pow(image->pixels[i][j].green / 255.0, inv_gamma) * 255.0);
-            uint8_t b = (uint8_t)(pow(image->pixels[i][j].blue / 255.0, inv_gamma) * 255.0);
+            const uint8_t r = (uint8_t)(pow(image->pixels[i][j].red / 255.0, inv_gamma) * 255.0);
+            const uint8_t g = (uint8_t)(pow(image->pixels[i][j].green / 255.0, inv_gamma) * 255.0);
+            const uint8_t b = (uint8_t)(pow(image->pixels[i][j].blue / 255.0, inv_gamma) * 255.0);
             image->pixels[i][j].red = r;
             image->pixels[i][j].green = g;
             image->pixels[i][j].blue = b;
